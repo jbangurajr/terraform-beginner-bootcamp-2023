@@ -241,4 +241,6 @@ If you lose this file, you lose knowning the state of your infrastructure.
 
 #### AWS S3 Bucket Rules
 
+When creating the s3 bucket follow rules to avoid error.
+
 [Rules to follow when creating an S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html)
