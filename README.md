@@ -240,5 +240,5 @@ If you lose this file, you lose knowning the state of your infrastructure.
 `.terraform` directory contains binaries of terraform providers.
 
 #### AWS S3 Bucket Rules
-[Rules to follow when creating an S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html)
 
+[Rules to follow when creating an S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html)
