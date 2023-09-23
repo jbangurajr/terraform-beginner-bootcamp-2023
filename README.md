@@ -276,3 +276,27 @@ Provide the following code (replace your token in the file):
 ```
 
 We have automated this workaround with the following bash script [bin/generate_tfrc_credentials](https://github.com/omenking/terraform-beginner-bootcamp-2023/blob/main/journal/bin/generate_tfrc_credentials)
+
+## Creating Bash Alias for Terraform
+
+[Creating aliases in bash](https://linuxize.com/post/how-to-create-bash-aliases/#:~:text=Creating%20Bash%20Aliases,-Creating%20aliases%20in&text=An%20alias%20declaration%20starts%20with,declared%20on%20a%20new%20line.) is very straight forward. The syntax is as follows:
+
+```
+alias alias_name="command_to_run"
+```
+
+```
+alias tf="terraform"
+```
+
+An alias declaration starts with the alias keyword followed by the alias name, an equal sign and the command you want to run when you type the alias. The command needs to be enclosed in quotes and with no spacing around the equal sign. Each alias needs to be declared on a new line.
+
+You will then have to reload your bash profile with:
+
+```
+source ~/.bash_profile
+```
+
+### Automating the bash alias to load on Gitpod bootup
+
+Added a script to set up tf alias using chatgpt
