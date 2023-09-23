@@ -244,3 +244,35 @@ If you lose this file, you lose knowning the state of your infrastructure.
 When creating the s3 bucket follow rules to avoid error.
 
 [Rules to follow when creating an S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html)
+
+
+## Possible Issues with Terraform Cloud Login and Gitpod Workspace
+
+When attempting to run `terraform login` it will launch bash a wiswig view to generate a token. However it may not work as expected in Gitpod VsCode in the browser.
+
+The workaround is manually generate a token in Terraform Cloud
+
+```
+https://app.terraform.io/app/settings/tokens?source=terraform-login
+```
+
+Then create open the file manually here:
+
+```
+touch /home/gitpod/.terraform.d/credentials.tfrc.json
+open /home/gitpod/.terraform.d/credentials.tfrc.json
+```
+
+Provide the following code (replace your token in the file):
+
+```
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "YOUR-TERRAFORM-CLOUD-TOKEN"
+    }
+  }
+}
+```
+
+We have automated this workaround with the following bash script [bin/generate_tfrc_credentials](https://github.com/omenking/terraform-beginner-bootcamp-2023/blob/main/journal/bin/generate_tfrc_credentials)
