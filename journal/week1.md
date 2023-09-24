@@ -65,6 +65,31 @@ In Terraform, variable values can be set in various ways, and Terraform follows 
 
 6. **Variable Expressions (Computed Values):** In some cases, variables may be computed or derived within your configuration using expressions or functions. These computed values are evaluated at runtime based on other variables or data sources.
 
+## Fixing Tags
+
+[How to Delete Local and Remote Tags on Git](https://devconnected.com/how-to-delete-local-and-remote-tags-on-git/)
+
+Locall delete a tag
+
+```
+git tag -d <tag_name>
+```
+
+Remotely delete tag
+
+```
+git push --delete origin tagname
+```
+
+Checkout the commit that you want to retag. Grab the sha from your Github history.
+
+```
+git checkout <SHA>
+git tag M.M.P
+git push --tags
+git checkout main
+```
+
 ## Dealing With Configuration Drift
 
 
