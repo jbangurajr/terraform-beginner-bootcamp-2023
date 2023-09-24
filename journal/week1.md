@@ -49,7 +49,7 @@ This is the default file to load in terraform variables in blunk
 
 Terraform will automatically read the values from the `auto.tfvars` file and use them as default values for your variables unless overridden by values provided through other means. Using `auto.tfvars` can make it convenient to set default values for your variables without needing to specify them on the command line every time you run Terraform.
 
-### order of terraform variables
+### Order of precedence for terraform variables
 
 In Terraform, variable values can be set in various ways, and Terraform follows a specific order of precedence when determining the final value of a variable. Here's the order of precedence, from highest to lowest:
 
@@ -64,3 +64,29 @@ In Terraform, variable values can be set in various ways, and Terraform follows 
 5. **Implicit Values (for sensitive variables):** If a variable is marked as sensitive using the `sensitive` argument in the variable block, Terraform will not show or log its value. You can still set these sensitive variables using the above methods, but their values will not be displayed in logs or plan output.
 
 6. **Variable Expressions (Computed Values):** In some cases, variables may be computed or derived within your configuration using expressions or functions. These computed values are evaluated at runtime based on other variables or data sources.
+
+## Dealing With Configuration Drift
+
+
+## What happens if we lose our state file?
+
+If you lose your statefile, you most likley have to tear down all your cloud infrastructure manually.
+
+You can use terraform import but it won't for all cloud resources. You need check the terraform providers documentation for which resources support import.
+
+### Fix Missing Resources with Terraform Import
+
+`terraform import aws_s3_bucket.bucket bucket-name`
+
+[Terraform Import [AWS S3 Bucket Import]](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import)
+
+### Fix Manual Configuration
+If someone goes and delete or modifies cloud resource manually through ClickOps.
+
+If we run Terraform plan is with attempt to put our infrstraucture back into the expected state fixing Configuration Drift
+
+## Fix using Terraform Refresh
+
+```
+terraform apply -refresh-only -auto-approve
+```
