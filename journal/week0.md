@@ -280,20 +280,20 @@ When attempting to run `terraform login` it will launch bash a wiswig view to ge
 
 The workaround is manually generate a token in Terraform Cloud
 
-```
+```sh
 https://app.terraform.io/app/settings/tokens?source=terraform-login
 ```
 
 Then create open the file manually here:
 
-```
+```sh
 touch /home/gitpod/.terraform.d/credentials.tfrc.json
 open /home/gitpod/.terraform.d/credentials.tfrc.json
 ```
 
 Provide the following code (replace your token in the file):
 
-```
+```sh
 {
   "credentials": {
     "app.terraform.io": {
@@ -309,11 +309,11 @@ We have automated this workaround with the following bash script [bin/generate_t
 
 [Creating aliases in bash](https://linuxize.com/post/how-to-create-bash-aliases/#:~:text=Creating%20Bash%20Aliases,-Creating%20aliases%20in&text=An%20alias%20declaration%20starts%20with,declared%20on%20a%20new%20line.) is very straight forward. The syntax is as follows:
 
-```
+```sh
 alias alias_name="command_to_run"
 ```
 
-```
+```sh
 alias tf="terraform"
 ```
 
@@ -321,7 +321,7 @@ An alias declaration starts with the alias keyword followed by the alias name, a
 
 You will then have to reload your bash profile with:
 
-```
+```sh
 source ~/.bash_profile
 ```
 
