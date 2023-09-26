@@ -4,7 +4,7 @@
 
 Our root module structure is as follows:
 
-```
+```md
 PROJECT_ROOT
 │
 ├── main.tf                 # everything else.
@@ -38,7 +38,7 @@ We can use the `-var` flag to set an input variable or override a variable in th
 
 ### var-file flag
 This flag is used to specify a file containing variable values. You can define your variables and their values in a separate variable file (commonly with a `.tfvars` extension) and then use the `-var-file` flag to load these values into your Terraform configuration. For example:
-```
+```tf
 terraform apply -var-file="my-vars.tfvars"
 ```
 
@@ -71,19 +71,19 @@ In Terraform, variable values can be set in various ways, and Terraform follows 
 
 Locall delete a tag
 
-```
+```sh
 git tag -d <tag_name>
 ```
 
 Remotely delete tag
 
-```
+```sh
 git push --delete origin tagname
 ```
 
 Checkout the commit that you want to retag. Grab the sha from your Github history.
 
-```
+```sh
 git checkout <SHA>
 git tag M.M.P
 git push --tags
@@ -112,7 +112,7 @@ If we run Terraform plan is with attempt to put our infrstraucture back into the
 
 ## Fix using Terraform Refresh
 
-```
+```tf
 terraform apply -refresh-only -auto-approve
 ```
 
@@ -126,7 +126,7 @@ It is recommend to place modules in a `modules` directory when locally developin
 
 We can pass input variables to our module. The module has to declare the terraform variables in its own variables.tf
 
-```
+```tf
 module "terrahouse_aws" {
   source = "./modules/terrahouse_aws"
   user_uuid = var.user_uuid
@@ -142,7 +142,7 @@ Using the source we can import the module from various places eg:
 - Github
 - Terraform Registry
 
-```
+```tf
 module "terrahouse_aws" {
   source = "./modules/terrahouse_aws"
 }
@@ -162,7 +162,7 @@ It may likely produce older examples that could be deprecated. Often affecting p
 
 This is a built in terraform function to check the existance of a file.
 
-```
+```sh
 condition = fileexists(var.error_html_filepath)
 ```
 [Fileexists function](https://developer.hashicorp.com/terraform/language/functions/fileexists)
@@ -181,6 +181,45 @@ In terraform there is a special variable called `path` that allows us to referen
 
 - path.root = get the path for the root module [Special Path Variable](https://developer.hashicorp.com/terraform/language/expressions/references#filesystem-and-workspace-info)
 
-```
+```tf
 resource "aws_s3_object" "index_html" { bucket = aws_s3_bucket.website_bucket.bucket key = "index.html" source = "${path.root}/public/index.html" }
 ```
+## Terraform Locals
+
+Locals allows us to define local variables. It can be very useful when we need transform data into another format and have referenced a varaible.
+
+```tf
+locals {
+  s3_origin_id = "MyS3Origin"
+}
+```
+
+[Local Values](https://developer.hashicorp.com/terraform/language/values/locals)
+
+
+## Terraform Data Sources
+
+This allows use to source data from cloud resources.
+
+This is useful when we want to reference cloud resources without importing them.
+
+```tf
+data "aws_caller_identity" "current" {}
+
+output "account_id" {
+  value = data.aws_caller_identity.current.account_id
+}
+```
+
+[Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
+
+## Working with JSON
+
+We use the jsonencode to create the json policy inline in the hcl.
+
+```
+> jsonencode({"hello"="world"})
+{"hello":"world"}
+```
+
+[jsonencode](https://developer.hashicorp.com/terraform/language/functions/jsonencode)
