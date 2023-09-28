@@ -217,7 +217,7 @@ output "account_id" {
 
 We use the jsonencode to create the json policy inline in the hcl.
 
-```
+```sh
 > jsonencode({"hello"="world"})
 {"hello":"world"}
 ```
@@ -311,3 +311,48 @@ Heredoc refers to a special block of code that contains multi-line strings that 
 
 [Heredoc](https://developer.hashicorp.com/terraform/language/expressions/strings#heredoc-strings)
 
+## http-server -npm
+
+http-server is a simple, zero-configuration command-line static HTTP server. It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development and learning.
+
+### Installation:
+
+#### Globally via npm
+
+```sh
+npm install --global http-server
+```
+
+#### Usage:
+
+```sh
+http-server [path] [options]
+```
+
+`[path]` defaults to `./public` if the folder exists, and `./` otherwise.
+
+Now you can visit http://localhost:8080 to view your server
+
+[http-server: a simple static HTTP server](https://www.npmjs.com/package/http-server)
+
+## Terraform Functions
+
+The Terraform language includes a number of built-in functions that you can call from within expressions to transform and combine values. The general syntax for function calls is a function name followed by comma-separated arguments in parentheses:
+
+```tf
+for_each = fileset(var.assets_path,"*.{jpg,png,gif}")
+```
+
+[Built-in Functions](https://developer.hashicorp.com/terraform/language/functions)
+
+## For Each Expressions
+
+For each allows us to enumerate over complex data types
+
+```sh
+[for s in var.list : upper(s)]
+```
+
+This is mostly useful when you are creating multiples of a cloud resource and you want to reduce the amount of repetitive terraform code.
+
+[For Each Expressions](https://developer.hashicorp.com/terraform/language/expressions/for)
