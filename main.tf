@@ -1,13 +1,13 @@
 terraform {
-  /*
+  
   cloud {
     organization = "terraform-cloud-bootcamp"
 
     workspaces {
-      name = "terrahouse-move-in"
+      name = "terraform-cloud"
     }
   }
-  */
+  
 }
 
 module "terrahouse_aws" {
