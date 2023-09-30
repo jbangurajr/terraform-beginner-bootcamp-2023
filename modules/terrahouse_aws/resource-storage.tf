@@ -27,7 +27,7 @@ resource "aws_s3_object" "index_html" {
   source = "${path.root}${var.index_html_filepath}"
   content_type = "text/html"
 
-  etag = filemd5("${path.root}${var.index_html_filepath}")
+  etag = filemd5("${var.index_html_filepath}")
 }
 
 resource "aws_s3_object" "error_html" {
@@ -36,7 +36,7 @@ resource "aws_s3_object" "error_html" {
   source = "${path.root}${var.error_html_filepath}"
   content_type = "text/html"
 
-  etag = filemd5("${path.root}${var.error_html_filepath}")
+  etag = filemd5("${var.error_html_filepath}")
 }
 
 
