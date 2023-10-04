@@ -52,3 +52,11 @@ bundle exec ruby server.rb
 ```
 
 All of the code for our server is stored in the `server.rb` file.
+
+## Custom Terraform Providers
+
+### Create main.go file
+
+The contents of the main function consume the Plugin SDK's plugin library which facilitates the RPC communication between Terraform Core and the plugin.
+
+[Setup and implement read](https://developer.hashicorp.com/terraform/tutorials/providers/provider-setup)
