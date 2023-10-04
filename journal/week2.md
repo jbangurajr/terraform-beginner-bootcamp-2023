@@ -55,8 +55,22 @@ All of the code for our server is stored in the `server.rb` file.
 
 ## Custom Terraform Providers
 
+### Create rc file
+
+The primary purpose of the terraform.rc file in Terraform is to override default settings and specify where to look for custom providers.
+
+[Terraform Local Providers and Registry Mirror Configuration](https://servian.dev/terraform-local-providers-and-registry-mirror-configuration-b963117dfffa)
+
 ### Create main.go file
 
 The contents of the main function consume the Plugin SDK's plugin library which facilitates the RPC communication between Terraform Core and the plugin.
 
 [Setup and implement read](https://developer.hashicorp.com/terraform/tutorials/providers/provider-setup)
+
+### Test the provider
+
+Use `go mod init` to initialize the directory for a terraform provider in Go
+
+```go
+go build -o terraform-provider-terratowns_v1.0.0
+```
