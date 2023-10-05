@@ -76,7 +76,6 @@ Defining a function `providerConfigure`, typically used in Terraform providers t
 
 `./bin/build_provider`
 
-
 Use `go mod init` to initialize the directory for a terraform provider in Go
 
 ```go
