@@ -67,10 +67,49 @@ The contents of the main function consume the Plugin SDK's plugin library which 
 
 [Setup and implement read](https://developer.hashicorp.com/terraform/tutorials/providers/provider-setup)
 
-### Test the provider
+### Add Provider Block
+
+Defining a function `providerConfigure`, typically used in Terraform providers to configure the provider's settings and initialize the provider with those settings.
+
+#### Test the provider
+
+`./bin/build_provider`
 
 Use `go mod init` to initialize the directory for a terraform provider in Go
 
 ```go
 go build -o terraform-provider-terratowns_v1.0.0
 ```
+
+### Add Resource Blocks
+Using CRUD
+
+```go
+ResourcesMap:  map[string]*schema.Resource{
+			"terratowns_home": Resource(),
+		},
+```
+
+```go
+func Resource() *schema.Resource {
+	resource := &schema.Resource{
+		CreateContext: resourceHouseCreate,
+		ReadContext: resourceHouseRead,
+		UpdateContext: resourceHouseUpdate,
+		DeleteContext: resourceHouseDelete,
+		Schema: map[string]*schema.Schema{
+			"name": {
+				Type: schema.TypeString,
+				Required: true,
+				Description: "Name of home",
+			},
+```
+## CRUD
+
+Terraform Provider resources utilize CRUD.
+
+CRUD stands for Create, Read Update, and Delete
+
+[Perform CRUD operations with providers](https://developer.hashicorp.com/terraform/tutorials/providers/provider-use)
+
+https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
