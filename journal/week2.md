@@ -67,6 +67,7 @@ The contents of the main function consume the Plugin SDK's plugin library which 
 
 [Setup and implement read](https://developer.hashicorp.com/terraform/tutorials/providers/provider-setup)
 
+
 ### Add Provider Block
 
 Defining a function `providerConfigure`, typically used in Terraform providers to configure the provider's settings and initialize the provider with those settings.
@@ -74,6 +75,9 @@ Defining a function `providerConfigure`, typically used in Terraform providers t
 #### Test the provider
 
 `./bin/build_provider`
+
+### Test the provider
+
 
 Use `go mod init` to initialize the directory for a terraform provider in Go
 
