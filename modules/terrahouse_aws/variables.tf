@@ -1,6 +1,7 @@
 variable "user_uuid" {
   description = "value"
   type        = string
+  sensitive = true
 
   validation {
     condition     = can(regex("^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", var.user_uuid))
@@ -8,6 +9,7 @@ variable "user_uuid" {
   }
 }
 
+/*
 variable "bucket_name" {
   description = "AWS S3 Bucket Name"
   type        = string
@@ -17,6 +19,7 @@ variable "bucket_name" {
     error_message = "Invalid S3 bucket name. It must be between 3 and 63 characters, start and end with a lowercase letter or number, and contain only lowercase letters, numbers, hyphens, and periods."
   }
 }
+*/
 
 variable "index_html_filepath" {
   description = "Path to the index.html file"
