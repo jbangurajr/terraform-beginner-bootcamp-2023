@@ -4,6 +4,10 @@ package main
 
 // fmt is short format, it contains functions for formatted I/O.
 import (
+	"bytes"
+	"context"
+	"encoding/json"
+	"net/http"
 	"log"
 	"fmt"
 	"github.com/google/uuid"
@@ -181,8 +185,6 @@ func resourceHouseCreate(ctx context.Context, d *schema.ResourceData, m interfac
 
 	log.Print("resourceHouseCreate:end")
 
-	var diags diag.Diagnostics
-
 	return diags
 }
 
@@ -232,8 +234,6 @@ func resourceHouseRead(ctx context.Context, d *schema.ResourceData, m interface{
 	}
 
 	log.Print("resourceHouseRead:end")
-
-	var diags diag.Diagnostics
 
 	return diags
 }
@@ -292,9 +292,6 @@ func resourceHouseUpdate(ctx context.Context, d *schema.ResourceData, m interfac
 	d.Set("name",payload["name"])
 	d.Set("description",payload["description"])
 	d.Set("content_version",payload["content_version"])
-  
-	var diags diag.Diagnostics
-
 	return diags
 }
 
@@ -334,8 +331,5 @@ func resourceHouseDelete(ctx context.Context, d *schema.ResourceData, m interfac
 	d.SetId("")
 
 	log.Print("resourceHouseDelete:end")
-
-	var diags diag.Diagnostics
-
 	return diags
 }
