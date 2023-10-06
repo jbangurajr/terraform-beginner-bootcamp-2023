@@ -1,7 +1,19 @@
+variable "terratowns_endpoint" {
+  description = "value"
+  type = string
+}
+
 variable "user_uuid" {
   description = "value"
   type        = string
   sensitive = true
+}
+
+variable "token" {
+  description = "value"
+  type = string
+  sensitive = true
+  
 }
 
 /*
@@ -11,31 +23,30 @@ variable "bucket_name" {
 }
 */
 
-variable "index_html_filepath" {
-  type        = string
+variable "aws" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
 
-variable "error_html_filepath" {
-  type        = string
+variable "azure" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
 
-variable "content_version" {
-  type        = number
+variable "gcp" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
 
-variable "assets_path" {
-  description = "Path to assets folder"
-  type = string
-}
-
-variable "terratowns_endpoint" {
-  description = "value"
-  type = string
-}
-
-variable "token" {
-  description = "value"
-  type = string
-  sensitive = true
-  
+variable "oci" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }

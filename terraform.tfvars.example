@@ -1,8 +1,27 @@
 terratowns_endpoint="https://terratowns.cloud/api"
+
 user_uuid = sensitive
-#bucket_name = "3od1nudj2w72xk985uoxeda3jugwjowp"
-index_html_filepath ="/workspace/terraform-beginner-bootcamp-2023/public/index.html"
-error_html_filepath ="/workspace/terraform-beginner-bootcamp-2023/public/error.html"
-assets_path="/workspace/terraform-beginner-bootcamp-2023/public/assets/"
-content_version = 1
+
+#bucket_name = random
+
+aws = {
+    public_path = "/workspace/terraform-beginner-bootcamp-2023/public/aws"
+    content_version = 1
+}
+
+azure = {
+    public_path = "/workspace/terraform-beginner-bootcamp-2023/public/azure"
+    content_version = 2
+}
+
+gcp = {
+    public_path = "/workspace/terraform-beginner-bootcamp-2023/public/gcp"
+    content_version = 3
+}
+
+oci = {
+    public_path = "/workspace/terraform-beginner-bootcamp-2023/public/oci"
+    content_version = 4
+}
+
 token = sensitive
