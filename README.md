@@ -1,9 +1,14 @@
 # Terraform Beginner Bootcamp 2023
 
-<img src="assets/Architectural Diagram1.jpg"/>
-<img src="assets/Architectural Diagram2.jpg"/>
-<img src="assets/Architectural Diagram3.jpg"/>
-<img src="assets/Architectural Diagram4.jpg"/>
+![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/main/assets/Architectural%20Diagram1.jpg)
+
+![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/main/assets/Architectural%20Diagram2.jpg)
+
+![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/main/assets/Architectural%20Diagram3.jpg)
+
+![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/main/assets/Architectural%20Diagram4.jpg)
+
+
 
 
 ## Weekly Journals
