@@ -1,7 +1,7 @@
 variable "user_uuid" {
   description = "value"
   type        = string
-  sensitive = true
+  sensitive   = true
 
   validation {
     condition     = can(regex("^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", var.user_uuid))

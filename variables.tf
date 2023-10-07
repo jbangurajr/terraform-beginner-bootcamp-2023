@@ -1,19 +1,19 @@
 variable "terratowns_endpoint" {
   description = "value"
-  type = string
+  type        = string
 }
 
 variable "user_uuid" {
   description = "value"
   type        = string
-  sensitive = true
+  sensitive   = true
 }
 
 variable "token" {
   description = "value"
-  type = string
-  sensitive = true
-  
+  type        = string
+  sensitive   = true
+
 }
 
 /*
@@ -25,28 +25,28 @@ variable "bucket_name" {
 
 variable "aws" {
   type = object({
-    public_path = string
+    public_path     = string
     content_version = number
   })
 }
 
 variable "azure" {
   type = object({
-    public_path = string
+    public_path     = string
     content_version = number
   })
 }
 
 variable "gcp" {
   type = object({
-    public_path = string
+    public_path     = string
     content_version = number
   })
 }
 
 variable "oci" {
   type = object({
-    public_path = string
+    public_path     = string
     content_version = number
   })
 }

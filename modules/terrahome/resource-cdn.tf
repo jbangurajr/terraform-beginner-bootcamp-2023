@@ -1,5 +1,5 @@
-locals  {
-    s3_origin_id = "MyS3Origin"
+locals {
+  s3_origin_id = "MyS3Origin"
 }
 
 resource "aws_cloudfront_origin_access_control" "default" {
@@ -23,7 +23,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   default_root_object = "index.html"
 
 
-#  #aliases = ["mysite.example.com", "yoursite.example.com"]
+  #  #aliases = ["mysite.example.com", "yoursite.example.com"]
 
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
@@ -44,7 +44,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     max_ttl                = 86400
   }
 
- 
+
 
   price_class = "PriceClass_200"
 
