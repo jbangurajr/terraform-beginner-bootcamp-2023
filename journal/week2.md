@@ -1,10 +1,25 @@
 # Terraform Beginner Bootcamp 2023 - Week 2
 
+- [Working with Ruby](#working-with-ruby)
+	- [Bundler](#bundler)
+		- [Install Gems](#install-gems)
+		- [Executing ruby scripts in the context of bundler](#executing-ruby-scripts-in-the-context-of-bundler)
+	- [Sinatra](#sinatra)
+- [Terratowns Mock Server](#terratowns-mock-server)
+	- [Running the web server](#running-the-web-server)
+- [Custom Terraform Providers](#custom-terraform-providers)
+	- [Create rc file](#create-rc-file)
+	- [Create main.go file](#create-maingo-file)
+	- [Add Provider Block](#add-provider-block)
+		- [Test the provider](#test-the-provider)
+	- [Add Resource Blocks](#add-resource-blocks)
+- [CRUD](#crud)
+
 ## Working with Ruby
 
 ### Bundler
 
-Bundler is a package manager for runy. It is the primary way to install ruby packages (known as gems) for ruby.
+Bundler is a package manager for ruby. It is the primary way to install ruby packages (known as gems) for ruby.
 
 #### Install Gems
 
