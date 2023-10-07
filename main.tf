@@ -1,11 +1,11 @@
 terraform {
   required_providers {
     terratowns = {
-      source = "local.providers/local/terratowns"
+      source  = "local.providers/local/terratowns"
       version = "1.0.0"
     }
   }
-  
+
   cloud {
     organization = "terraform-cloud-bootcamp"
 
@@ -13,27 +13,27 @@ terraform {
       name = "the-multi-cloud-terrahome"
     }
   }
-  
+
 }
 
 provider "terratowns" {
-  endpoint = var.terratowns_endpoint
+  endpoint  = var.terratowns_endpoint
   user_uuid = var.user_uuid
-  token = var.token
+  token     = var.token
 }
 
 
 
 module "terrahome_aws" {
-  source      = "./modules/terrahome"
-  user_uuid   = var.user_uuid
-  public_path = var.aws.public_path
+  source          = "./modules/terrahome"
+  user_uuid       = var.user_uuid
+  public_path     = var.aws.public_path
   content_version = var.aws.content_version
 
 }
 
 resource "terratowns_home" "aws" {
-  name = "What makes AWS great"
+  name        = "What makes AWS great"
   description = <<DESCRIPTION
   While all cloud providers offer a variety of services, 
   Amazon Web Services (AWS) excels in certain areas: 
@@ -43,7 +43,8 @@ resource "terratowns_home" "aws" {
   a large customer base, and a strong ecosystem of partners and third-party tools.
 DESCRIPTION
   domain_name = module.terrahome_aws.domain_name
-  town = "up-in-the-clouds"
+  town        = "the-nomad-pad"
+  #town       = "up-in-the-clouds"
   content_version = var.aws.content_version
 }
 
@@ -51,15 +52,15 @@ DESCRIPTION
 
 
 module "terrahome_azure" {
-  source      = "./modules/terrahome"
-  user_uuid   = var.user_uuid
-  public_path = var.azure.public_path
+  source          = "./modules/terrahome"
+  user_uuid       = var.user_uuid
+  public_path     = var.azure.public_path
   content_version = var.azure.content_version
 
 }
 
 resource "terratowns_home" "azure" {
-  name = "What makes Azure great"
+  name        = "What makes Azure great"
   description = <<DESCRIPTION
   While all cloud providers offer a variety of services, 
   Microsoft Azure (Azure) excels in certain areas: 
@@ -69,22 +70,23 @@ resource "terratowns_home" "azure" {
   Many Fortune 500 companies have adopted Azure for various cloud computing needs.
 DESCRIPTION
   domain_name = module.terrahome_azure.domain_name
-  town = "up-in-the-clouds"
+  town        = "the-nomad-pad"
+  #town       = "up-in-the-clouds"
   content_version = var.azure.content_version
 }
 
 
 
 module "terrahome_gcp" {
-  source      = "./modules/terrahome"
-  user_uuid   = var.user_uuid
-  public_path = var.gcp.public_path
+  source          = "./modules/terrahome"
+  user_uuid       = var.user_uuid
+  public_path     = var.gcp.public_path
   content_version = var.gcp.content_version
 
 }
 
 resource "terratowns_home" "gcp" {
-  name = "What makes GCP great"
+  name        = "What makes GCP great"
   description = <<DESCRIPTION
   While all cloud providers offer a variety of services, 
   Google Cloud Platform (GCP) excels in certain areas:
@@ -93,7 +95,8 @@ resource "terratowns_home" "gcp" {
   Making it well-suited for organizations requiring containerization services.
 DESCRIPTION
   domain_name = module.terrahome_gcp.domain_name
-  town = "up-in-the-clouds"
+  town        = "the-nomad-pad"
+  #town       = "up-in-the-clouds"
   content_version = var.gcp.content_version
 }
 
@@ -101,15 +104,15 @@ DESCRIPTION
 
 
 module "terrahome_oci" {
-  source      = "./modules/terrahome"
-  user_uuid   = var.user_uuid
-  public_path = var.oci.public_path
+  source          = "./modules/terrahome"
+  user_uuid       = var.user_uuid
+  public_path     = var.oci.public_path
   content_version = var.oci.content_version
 
 }
 
 resource "terratowns_home" "oci" {
-  name = "What makes OCI great"
+  name        = "What makes OCI great"
   description = <<DESCRIPTION
   While all cloud providers offer a variety of services, 
   Oracle Cloud Infrastructure (OCI) excels in certain areas: 
@@ -119,6 +122,7 @@ resource "terratowns_home" "oci" {
   Oracle also offers Autonomous Database services which offer self-driving, self-securing, and self-repairing capabilities. 
 DESCRIPTION
   domain_name = module.terrahome_oci.domain_name
-  town = "up-in-the-clouds"
+  town        = "the-nomad-pad"
+  #town       = "up-in-the-clouds"
   content_version = var.oci.content_version
 }
