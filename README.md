@@ -91,4 +91,8 @@ Refactoring, testing, and documentation were vital throughout the project along 
 - [Terraform Registry Custom Provider](https://registry.terraform.io/modules/jbangurajr/bootcamp-2023/beginner/latest)
 
 - [Terrahome](https://terratowns.cloud/)
-![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/main/assets/terratown.jpg)![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/main/assets/terratown2.jpg)
+
+
+![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/main/assets/terratown.jpg)
+
+![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/main/assets/terratown2.jpg)
