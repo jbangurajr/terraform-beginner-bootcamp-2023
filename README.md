@@ -1,4 +1,4 @@
-![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/63-update-and-maintenance/assets/Terraform-Cloud-Project-Bootcamp-2023.jpg)
+![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/main/assets/Terraform-Cloud-Project-Bootcamp-2023.jpg)
 
 ## Creating a Custom Terraform Provider and Integrating CloudFront with Amazon Simple Storage Service (S3) to host a Static Website with Terraform.
 
@@ -90,4 +90,5 @@ Refactoring, testing, and documentation were vital throughout the project along 
 
 - [Terraform Registry Custom Provider](https://registry.terraform.io/modules/jbangurajr/bootcamp-2023/beginner/latest)
 
-- Terrahome![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/63-update-and-maintenance/assets/terratown.jpg)![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/63-update-and-maintenance/assets/terratown2.jpg)
+- [Terrahome](https://terratowns.cloud/)
+![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/main/assets/terratown.jpg)![ ](https://raw.githubusercontent.com/jbangurajr/terraform-beginner-bootcamp-2023/main/assets/terratown2.jpg)
